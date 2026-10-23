@@ -4,25 +4,24 @@ import requests
 
 
 class GoogleMapTest:
-
-    # Параметры тестируемого сайта:
-    BASE_URL = "https://rahulshettyacademy.com"
-    KEY_PARAM = {"key": "qaclick123"}  # для всех запросов
-    POST_RESOUSE = "/maps/api/place/add/json"
-    body = {
-        "location": {"lat": -38.383494, "lng": 33.427362},
-        "accuracy": 50,
-        "name": "Frontline house",
-        "phone_number": "(+91) 983 893 3937",
-        "address": "29, side layout, cohen 09",
-        "types": ["shoe park", "shop"],
-        "website": "http://google.com",
-        "language": "French-IN",
-    }
-    GET_RESOUSE = "/maps/api/place/get/json"
-
-    # Переменная для имени файла, в который будем писать
-    FILE_NAME = "place_ids.txt"
+    def __init__(self):  # Создаем атрибуты экземпляра класса
+        # Параметры тестируемого сайта:
+        self.BASE_URL = "https://rahulshettyacademy.com"
+        self.KEY_PARAM = {"key": "qaclick123"}  # для всех запросов
+        self.POST_RESOUSE = "/maps/api/place/add/json"
+        self.body = {
+            "location": {"lat": -38.383494, "lng": 33.427362},
+            "accuracy": 50,
+            "name": "Frontline house",
+            "phone_number": "(+91) 983 893 3937",
+            "address": "29, side layout, cohen 09",
+            "types": ["shoe park", "shop"],
+            "website": "http://google.com",
+            "language": "French-IN",
+        }
+        self.GET_RESOUSE = "/maps/api/place/get/json"
+        # Переменная для имени файла, в который будем писать:
+        self.FILE_NAME = "place_ids.txt"
 
     def post_get_5_times(self):
         print("\n-=Начало теста=-")
